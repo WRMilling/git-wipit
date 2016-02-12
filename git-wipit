@@ -11,9 +11,23 @@ say() {
   printf '%s\n' "$1"
 }
 
+branch_name() {
+  basename "$(git symbolic-ref HEAD)"
+}
+
 wipit() {
   cd $GIT_ROOT_DIR
   git add -A
+
+  if [ "$1" = "-b" ] || [ "$1" = "--branch" ]; then
+    say "Going on a branch, good choice."
+    if [ -z "$2" ]; then
+      git checkout -b "wip/$(branch_name)"
+    else
+      git checkout -b "$2"
+    fi
+  fi
+
   git commit -m "WIP it good!"
   say "WIP IT REAL GOOD!"
 }
@@ -28,6 +42,7 @@ commands:
   git wipit                       Creates a fast WIP Commit
 
 options:
+  -b, --branch                    Create a wip branch instead of a wip commit
   -h, --help                      Display this help information
   -v, --version                   Display this version of git-wipit
 
