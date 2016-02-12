@@ -12,7 +12,10 @@ say() {
 }
 
 wipit() {
-
+  cd $GIT_ROOT_DIR
+  git add -A
+  git commit -m "WIP it good!"
+  say "WIP IT REAL GOOD!"
 }
 
 show_help() {
