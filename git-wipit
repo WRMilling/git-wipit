@@ -1,0 +1,39 @@
+#!/usr/bin/env sh
+
+VERSION="0.0.1"
+GIT_ROOT_DIR="`git rev-parse --show-toplevel`"
+
+show_version() {
+  say "git-wipit v$VERSION"
+}
+
+say() {
+  printf '%s\n' "$1"
+}
+
+wipit() {
+
+}
+
+show_help() {
+  cat <<- EOF
+
+usage:
+  git wipit [options] [COMMAND] [args]
+
+commands:
+  git wipit                       Creates a fast WIP Commit
+
+options:
+  -h, --help                      Display this help information
+  -v, --version                   Display this version of git-wipit
+
+EOF
+}
+
+case $1 in
+	-h|--help) show_help; exit 0 ;;
+	-v|--version) show_version; exit 0 ;;
+esac
+
+wipit "$@"
