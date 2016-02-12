@@ -40,6 +40,8 @@ usage:
 
 commands:
   git wipit                       Creates a fast WIP Commit
+  git wipit -b                    Creates a branch on 'wip/<current branch>' with a wip commit
+  git wipit -b <name>             Creates a branch named '<name>' with a wip commit
 
 options:
   -b, --branch                    Create a wip branch instead of a wip commit
