@@ -30,4 +30,4 @@ options:
 
 The MIT License (MIT) Copyright (c) 2016 Winston R. Milling
 
-Please see the `LICENSE` file for full test.
+Please see the `LICENSE` file for full text.
