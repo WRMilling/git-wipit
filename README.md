@@ -6,6 +6,8 @@ WIP it good, WIP IT REAL GOOD!
 
 Run `sudo make install` which will install the git-wipit file to the /usr/local/bin directory.
 
+If you would rather install it yourself just move the git-wipit file into a direcory on your `$PATH` and make sure it is executable.
+
 ### Basic Usage
 
 Run `git wipit` to quick create a WIP commit with all uncommited changes. You can also create a branch for the wip commit with the `-b` or `--branch` command. Branching will create a branch at `wip/<current branch name>` unless a name is specified after `-b`.
